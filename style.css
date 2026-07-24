@@ -1,140 +1,987 @@
+/* ==========================
+   RESET
+========================== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#f5f7fa;
-    color:#333;
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fb;
+    color:#1b1b1b;
+    line-height:1.7;
 }
 
-header{
-    background:rgba(11,30,57,.95);
-    backdrop-filter:blur(10px);
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:999;
-    padding:18px 0;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
-}
+/* ==========================
+   CONTAINER
+========================== */
 
 .container{
     width:90%;
     max-width:1200px;
     margin:auto;
+}
+
+/* ==========================
+   LINKS
+========================== */
+
+a{
+    text-decoration:none;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ==========================
+   HEADER
+========================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    z-index:1000;
+
+    background:rgba(10,20,35,.92);
+
+    backdrop-filter:blur(8px);
+
+    box-shadow:0 2px 15px rgba(0,0,0,.15);
+
+}
+
+header .container{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
+    height:80px;
+
 }
 
-header h1{
-    font-size:30px;
-}
+.logo img{
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:30px;
-    font-size:15px;
-    font-weight:600;
-    transition:.3s;
-}
+    height:55px;
 
-nav a:hover{
-    color:#FFD700;
-}
-
-.hero{
-    background:linear-gradient(rgba(11,30,57,0.85), rgba(11,30,57,0.85)),
-    url("imagens/foto1.jpg");
-
-    background-size:cover;
-    background-position:center;
-    color:white;
-    text-align:center;
-    padding:180px 20px;
-}
-
-.hero h2{
-    font-size:42px;
-    margin-bottom:20px;
-    color:#ffd900;
-}
-
-.hero p{
-    font-size:20px;
-    margin-bottom:35px;
-}
-
-.botao{
-    background:#25D366;
-    color:white;
-    padding:15px 35px;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.botao:hover{
-    background:#1da851;
-}
-
-section{
-    padding:70px 10%;
-}
-
-section h2{
-    color:#0b1e39;
-    margin-bottom:25px;
-    font-size:34px;
-}
-
-ul{
-    list-style:none;
-}
-
-ul li{
-    background:white;
-    margin-bottom:15px;
-    padding:18px;
-    border-radius:10px;
-    box-shadow:0 3px 10px rgba(0,0,0,.08);
-}
-
-#contato{
-    background:#0b1e39;
-    color:white;
-}
-
-#contato h2{
-    color:white;
-}
-
-footer{
-    background:#081527;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
-@media(max-width:768px){
-
-.container{
-    flex-direction:column;
 }
 
 nav{
-    margin-top:20px;
+
+    display:flex;
+
+    gap:35px;
+
 }
 
-.hero h2{
+nav a{
+
+    color:white;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    color:#ffc107;
+
+}
+
+.btn-header{
+
+    background:#ffc107;
+
+    color:#111;
+
+    padding:12px 22px;
+
+    border-radius:8px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.btn-header:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+
+    position:relative;
+
+    min-height:100vh;
+
+    display:flex;
+
+    align-items:center;
+
+    background:linear-gradient(135deg,#081b33,#10365d);
+
+    overflow:hidden;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.35);
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+    color:white;
+
+    max-width:700px;
+
+}
+
+.mini{
+
+    display:inline-block;
+
+    background:#ffc107;
+
+    color:#111;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    line-height:1.15;
+
+    margin-bottom:25px;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    color:#e5e5e5;
+
+    margin-bottom:40px;
+
+}
+
+/* ==========================
+   BOTÕES
+========================== */
+
+.botoes{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.btn-principal{
+
+    background:#ffc107;
+
+    color:#111;
+
+    padding:16px 34px;
+
+    border-radius:10px;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.btn-principal:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.20);
+
+}
+
+.btn-secundario{
+
+    border:2px solid white;
+
+    color:white;
+
+    padding:16px 34px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.btn-secundario:hover{
+
+    background:white;
+
+    color:#111;
+
+}
+/* ==========================
+   DIFERENCIAIS
+========================== */
+
+.diferenciais{
+
+    margin-top:-70px;
+
+    position:relative;
+
+    z-index:10;
+
+}
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.card h3{
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+    color:#0c2d57;
+
+}
+
+.card p{
+
+    color:#666;
+
+    font-size:16px;
+
+}
+
+/* ==========================
+   TÍTULOS
+========================== */
+
+.titulo{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.titulo span{
+
+    color:#f0b400;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.titulo h2{
+
+    margin-top:12px;
+
+    font-size:42px;
+
+    color:#0c2d57;
+
+}
+
+/* ==========================
+   SERVIÇOS
+========================== */
+
+#servicos{
+
+    padding:120px 0;
+
+    background:#f5f7fb;
+
+}
+
+.servicos{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.servico{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    transition:.35s;
+
+    border:1px solid #ececec;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+.servico:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#f0b400;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.servico h3{
+
+    color:#0c2d57;
+
+    font-size:24px;
+
+    margin-bottom:18px;
+
+}
+
+.servico p{
+
+    color:#666;
+
+    line-height:1.8;
+
+}
+
+/* ==========================
+   ANIMAÇÃO
+========================== */
+
+.card,
+.servico{
+
+    animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================
+   EMPRESA
+========================== */
+
+#empresa{
+
+    padding:120px 0;
+
+    background:#ffffff;
+
+}
+
+.empresa{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.empresa-imagem img{
+
+    width:100%;
+
+    border-radius:20px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+
+}
+
+.subtitulo{
+
+    color:#f0b400;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+.empresa h2{
+
+    font-size:42px;
+
+    color:#0c2d57;
+
+    margin:18px 0 25px;
+
+    line-height:1.2;
+
+}
+
+.empresa p{
+
+    color:#666;
+
+    margin-bottom:20px;
+
+    line-height:1.9;
+
+}
+
+.empresa ul{
+
+    list-style:none;
+
+    margin-top:30px;
+
+}
+
+.empresa li{
+
+    margin-bottom:18px;
+
+    font-size:17px;
+
+    color:#333;
+
+}
+
+/* ==========================
+   GALERIA
+========================== */
+
+#galeria{
+
+    padding:120px 0;
+
+    background:#f5f7fb;
+
+}
+
+.galeria{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:25px;
+
+}
+
+.galeria img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    transition:.35s;
+
+    cursor:pointer;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.10);
+
+}
+
+.galeria img:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+/* ==========================
+   CONTATO
+========================== */
+
+#contato{
+
+    padding:120px 0;
+
+    background:linear-gradient(135deg,#081b33,#123f69);
+
+    color:#ffffff;
+
+    text-align:center;
+
+}
+
+.contato span{
+
+    color:#ffc107;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+}
+
+.contato h2{
+
+    font-size:48px;
+
+    margin:20px 0;
+
+}
+
+.contato p{
+
+    font-size:19px;
+
+    color:#e8e8e8;
+
+    margin-bottom:40px;
+
+    max-width:700px;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+.contato .btn-principal{
+
+    font-size:18px;
+
+}
+
+/* ==========================
+   TRANSIÇÕES
+========================== */
+
+.empresa-imagem img,
+.galeria img,
+.card,
+.servico,
+.btn-principal,
+.btn-secundario,
+.btn-header{
+
+    transition:.35s ease;
+
+}
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+
+    background:#06111f;
+
+    color:#ffffff;
+
+    padding:70px 0 25px;
+
+}
+
+.footer{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:50px;
+
+    margin-bottom:40px;
+
+}
+
+.footer-logo img{
+
+    width:180px;
+
+    margin-bottom:20px;
+
+}
+
+.footer-logo p{
+
+    color:#c8d2dc;
+
+    line-height:1.8;
+
+}
+
+.footer h3{
+
+    margin-bottom:20px;
+
+    color:#ffc107;
+
+    font-size:22px;
+
+}
+
+.footer-links{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+.footer-links a{
+
+    color:#ffffff;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:#ffc107;
+
+    padding-left:6px;
+
+}
+
+.footer-contato p{
+
+    margin-bottom:12px;
+
+    color:#d9d9d9;
+
+}
+
+.copyright{
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    padding-top:20px;
+
+    text-align:center;
+
+    color:#c8d2dc;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   BOTÃO WHATSAPP
+========================== */
+
+.whatsapp{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:65px;
+
+    height:65px;
+
+    background:#25D366;
+
+    color:#ffffff;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
     font-size:30px;
+
+    text-decoration:none;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+    z-index:9999;
+
 }
 
-}.logo{
-    height:70px;
+.whatsapp:hover{
+
+    transform:scale(1.1);
+
+}
+
+/* ==========================
+   RESPONSIVO
+========================== */
+
+@media (max-width: 992px){
+
+    .hero h1{
+
+        font-size:46px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .servicos{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .empresa{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .galeria{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .footer{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+    }
+
+    .footer-logo img{
+
+        margin:0 auto 20px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    header .container{
+
+        flex-direction:column;
+
+        height:auto;
+
+        padding:18px 0;
+
+    }
+
+    nav{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:18px;
+
+        margin:18px 0;
+
+    }
+
+    .hero{
+
+        text-align:center;
+
+        padding:120px 0 80px;
+
+    }
+
+    .hero h1{
+
+        font-size:34px;
+
+    }
+
+    .hero p{
+
+        font-size:17px;
+
+    }
+
+    .botoes{
+
+        justify-content:center;
+
+    }
+
+    .titulo h2{
+
+        font-size:32px;
+
+    }
+
+    .empresa h2{
+
+        font-size:32px;
+
+    }
+
+    .contato h2{
+
+        font-size:34px;
+
+    }
+
+    .servicos{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .galeria{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:480px){
+
+    .container{
+
+        width:94%;
+
+    }
+
+    .hero h1{
+
+        font-size:28px;
+
+    }
+
+    .btn-principal,
+    .btn-secundario,
+    .btn-header{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+    .whatsapp{
+
+        width:58px;
+
+        height:58px;
+
+        font-size:26px;
+
+    }
+
 }
